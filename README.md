@@ -1,4 +1,4 @@
-## Unveiling the Power of CLIP in Unsupervised Visible-Infrared Person Re-Identification [[pdf]](https://dl.acm.org/doi/pdf/10.1145/3581783.3612050)
+## Camera-Proxy Enhanced Identity-Recalibration Learning
 
 This is Official Repository for "Camera-Proxy Enhanced Identity-Recalibration Learning".
 
