@@ -1,4 +1,4 @@
-![图片](https://github.com/user-attachments/assets/c5c1b445-8c88-4c69-9268-7d9349719a88)## Camera-Proxy Enhanced Identity-Recalibration Learning
+## Camera-Proxy Enhanced Identity-Recalibration Learning
 
 This is Official Repository for "Camera-Proxy Enhanced Identity-Recalibration Learning".
 
