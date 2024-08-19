@@ -1,6 +1,6 @@
 ## Camera-Proxy Enhanced Identity-Recalibration Learning
 
-This is Official Repository for "Camera-Proxy Enhanced Identity-Recalibration Learning". 
+This is Official Repository for "Camera-Proxy Enhanced Identity-Recalibration Learning". The specific code will be released after being accepted by AAAI.
 
 ### Update Time
 -- 2024-8-5 We release the test models to github.
