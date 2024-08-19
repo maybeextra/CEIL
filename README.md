@@ -1,9 +1,9 @@
 ## Camera-Proxy Enhanced Identity-Recalibration Learning
 
-This is Official Repository for "Camera-Proxy Enhanced Identity-Recalibration Learning".
+This is Official Repository for "Camera-Proxy Enhanced Identity-Recalibration Learning". 
 
 ### Update Time
--- 2024-8-5 We release the test code to github.
+-- 2024-8-5 We release the test models to github.
 
 ### Trained models
 | Datasets  | Pretrained | Rank@1 | Rank@1 (R) | mAP | mAP (R) | Model(pth)                                                                                                 |
