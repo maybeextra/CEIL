@@ -1,0 +1,9 @@
+# reranking
+reranking_type: GCR
+gnn_k1: 28
+gnn_k2: 7
+# pre train
+resume_path: best/checkpoints/stage2/best_epoch_84.pth
+
+# path
+logs_dir: /logs/test/
