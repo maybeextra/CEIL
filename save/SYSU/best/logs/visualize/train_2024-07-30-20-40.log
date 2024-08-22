@@ -1,0 +1,72 @@
+2024-07-30 20:40:25,161: 
+======================== Training details ========================
+------------------------------------------------------------------
+		extract_batch_size : 128
+		extract_num_workers: 6
+		test_batch_size    : 128
+		test_num_workers   : 6
+		train_num_workers  : 4
+		backbone           : clip
+		stride_size        : [16, 16]
+		arch               : RN50
+		step_size          : 20
+		sampler            : sampler_by_identity
+		data_enhancement   : fusion
+		temp               : 0.05
+		img_h              : 288
+		img_w              : 144
+		smooth_weight      : 0.5
+		eps                : 0.6
+		min_samples        : 4
+		gpu                : 0
+		seed               : 1
+		save_epoch         : 5
+		eval_step          : 3
+		update_iter        : 20
+		use_weight         : True
+		loss_type          : cam_associate
+		steps              : [30, 50]
+		gamma              : 0.1
+		warmup_factor      : 0.01
+		warmup_iters       : 10
+		warmup_method      : linear
+		base_lr            : 0.00035
+		weight_decay       : 0.0005
+		weight_decay_bias  : 0.0005
+		bias_lr_factor     : 2
+		log_name           : test4
+		dataset            : SYSU
+		mode_1             : all
+		test_mode_1        : [2, 1]
+		mode_2             : indoor
+		test_mode_2        : [2, 1]
+		eval_iter          : 10
+		train_batch_size   : 40
+		train_num_instances: 10
+		num_iter           : 300
+		bg_knn             : 100
+		gnn_k1_cross       : 15
+		gnn_k2_cross       : 3
+		k1                 : 30
+		k2                 : 6
+		base_dir           : ../save/SYSU/
+		data_dir           : ../dataset/SYSU-MM01/
+		extend_dir         : 144x288/
+		reranking_type     : CGR
+		gnn_k1             : 27
+		gnn_k2             : 8
+		resume_path        : baseline/checkpoints/stage1/best_epoch_50.pth
+		logs_dir           : /logs/visualize/
+------------------------------------------------------------------
+=============================== END ===============================
+2024-07-30 20:40:26,180: Resized position embedding: 50x2048 to 163x2048
+2024-07-30 20:40:26,180: Position embedding resize to height:18 width: 9
+2024-07-30 20:40:27,156: Resized position embedding: 50x2048 to 163x2048
+2024-07-30 20:40:27,157: Position embedding resize to height:18 width: 9
+2024-07-30 20:40:28,122: Resized position embedding: 50x2048 to 163x2048
+2024-07-30 20:40:28,122: Position embedding resize to height:18 width: 9
+2024-07-30 20:40:28,170: ==> Load train_prepare model
+2024-07-30 20:40:29,264: ==> Start SNE
+2024-07-30 20:40:29,264: ######################################################
+2024-07-30 20:40:29,264: ==> Create pseudo labels
+2024-07-30 20:40:59,706: [  9 388 211  75  40  74 313 370  63 348]

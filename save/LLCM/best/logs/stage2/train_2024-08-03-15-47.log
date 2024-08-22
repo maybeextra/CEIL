@@ -1,0 +1,1195 @@
+2024-08-03 15:47:50,724: 
+======================== Training details ========================
+------------------------------------------------------------------
+		extract_batch_size : 128
+		extract_num_workers: 6
+		test_batch_size    : 128
+		test_num_workers   : 6
+		train_num_workers  : 4
+		backbone           : clip
+		stride_size        : [16, 16]
+		arch               : RN50
+		step_size          : 20
+		sampler            : sampler_by_identity
+		data_enhancement   : fusion
+		temp               : 0.05
+		img_h              : 288
+		img_w              : 144
+		smooth_weight      : 0.5
+		eps                : 0.6
+		min_samples        : 4
+		gpu                : 0
+		seed               : 1
+		save_epoch         : 5
+		eval_step          : 3
+		update_iter        : 20
+		use_weight         : True
+		loss_type          : cam_associate
+		steps              : [30, 50]
+		gamma              : 0.1
+		warmup_factor      : 0.01
+		warmup_iters       : 10
+		warmup_method      : linear
+		base_lr            : 0.00035
+		weight_decay       : 0.0005
+		weight_decay_bias  : 0.0005
+		bias_lr_factor     : 2
+		log_name           : test4_2
+		dataset            : LLCM
+		mode_1             : ir2rgb
+		test_mode_1        : [2, 1]
+		mode_2             : rgb2ir
+		test_mode_2        : [1, 2]
+		eval_iter          : 1
+		train_batch_size   : 80
+		train_num_instances: 10
+		num_iter           : 200
+		bg_knn             : 100
+		gnn_k1_cross       : 15
+		gnn_k2_cross       : 3
+		k1                 : 25
+		k2                 : 6
+		base_dir           : ../save/LLCM/
+		data_dir           : ../dataset/LLCM/
+		extend_dir         : 144x288/
+		stage              : 2
+		max_epoch          : 90
+		use_id_loss        : True
+		resume_path        : test4_2/checkpoints/stage1/train_2_epoch_50.pth
+		logs_dir           : /logs/stage2/
+		model_dir          : /checkpoints/stage2/
+------------------------------------------------------------------
+=============================== END ===============================
+2024-08-03 15:47:52,464: Resized position embedding: 50x2048 to 163x2048
+2024-08-03 15:47:52,465: Position embedding resize to height:18 width: 9
+2024-08-03 15:47:53,459: Resized position embedding: 50x2048 to 163x2048
+2024-08-03 15:47:53,460: Position embedding resize to height:18 width: 9
+2024-08-03 15:47:54,393: Resized position embedding: 50x2048 to 163x2048
+2024-08-03 15:47:54,394: Position embedding resize to height:18 width: 9
+2024-08-03 15:47:54,440: ==> Load train_prepare model
+2024-08-03 15:47:55,532: ==> Creat DBSCAN
+2024-08-03 15:47:55,532: ==> Start train stage2
+2024-08-03 15:47:55,584: ######################################################
+2024-08-03 15:47:55,585: Epoch[51]==> Create pseudo labels
+2024-08-03 15:48:10,216: Start computing jaccard distance
+2024-08-03 15:48:19,070: Jaccard distance compute end, time cost: 8.85438060760498
+2024-08-03 15:48:20,270: Epoch[51]==> Create RGB cluster 798 classes, proxy 1056 kinds
+2024-08-03 15:48:32,870: Start computing jaccard distance
+2024-08-03 15:48:39,954: Jaccard distance compute end, time cost: 7.084527969360352
+2024-08-03 15:48:40,800: Epoch[51]==> Create IR cluster 712 classes, proxy 1207 kinds
+2024-08-03 15:48:42,500: Epoch[51]==> Update Memory
+2024-08-03 15:48:43,976: Epoch[51]==> Start cross modal matching
+2024-08-03 15:48:44,054: Epoch[51]==> Creat dataset
+2024-08-03 15:48:44,218: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   798 |    16694
+          now  thermal |   712 |    13764
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 15:48:44,219: Epoch[51]==> Creat sampler
+2024-08-03 15:48:44,279: Epoch[51]==> Creat dataloader
+2024-08-03 15:48:44,348: Epoch[51]==> Train stage start
+2024-08-03 15:53:09,628: Epoch[51]==> Train end, time cost 265.27900290489197
+2024-08-03 15:53:09,822: Epoch[51] Test start
+2024-08-03 15:56:09,177: Epoch [51], save better model Rank-1: 44.70% to replace original model Rank-1: 0.00%
+2024-08-03 15:56:10,245: Epoch [51] Test end, time cost 180.42297315597534
+2024-08-03 15:56:10,346: ######################################################
+2024-08-03 15:56:10,346: Epoch[52]==> Create pseudo labels
+2024-08-03 15:56:25,156: Start computing jaccard distance
+2024-08-03 15:56:35,887: Jaccard distance compute end, time cost: 10.730843305587769
+2024-08-03 15:56:37,335: Epoch[52]==> Create RGB cluster 795 classes, proxy 1060 kinds
+2024-08-03 15:56:50,864: Start computing jaccard distance
+2024-08-03 15:57:01,245: Jaccard distance compute end, time cost: 10.381275177001953
+2024-08-03 15:57:03,131: Epoch[52]==> Create IR cluster 716 classes, proxy 1216 kinds
+2024-08-03 15:57:06,219: Epoch[52]==> Update Memory
+2024-08-03 15:57:07,602: Epoch[52]==> Start cross modal matching
+2024-08-03 15:57:07,654: Epoch[52]==> Creat dataset
+2024-08-03 15:57:07,912: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   795 |    16689
+          now  thermal |   716 |    13776
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 15:57:07,913: Epoch[52]==> Creat sampler
+2024-08-03 15:57:08,008: Epoch[52]==> Creat dataloader
+2024-08-03 15:57:08,217: Epoch[52]==> Train stage start
+2024-08-03 16:04:15,663: Epoch[52]==> Train end, time cost 427.4443438053131
+2024-08-03 16:04:15,997: ######################################################
+2024-08-03 16:04:15,998: Epoch[53]==> Create pseudo labels
+2024-08-03 16:04:34,541: Start computing jaccard distance
+2024-08-03 16:04:46,296: Jaccard distance compute end, time cost: 11.755062580108643
+2024-08-03 16:04:48,356: Epoch[53]==> Create RGB cluster 798 classes, proxy 1070 kinds
+2024-08-03 16:05:03,394: Start computing jaccard distance
+2024-08-03 16:05:11,868: Jaccard distance compute end, time cost: 8.473686218261719
+2024-08-03 16:05:13,435: Epoch[53]==> Create IR cluster 713 classes, proxy 1211 kinds
+2024-08-03 16:05:17,427: Epoch[53]==> Update Memory
+2024-08-03 16:05:18,793: Epoch[53]==> Start cross modal matching
+2024-08-03 16:05:18,843: Epoch[53]==> Creat dataset
+2024-08-03 16:05:19,086: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   798 |    16694
+          now  thermal |   713 |    13756
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 16:05:19,088: Epoch[53]==> Creat sampler
+2024-08-03 16:05:19,193: Epoch[53]==> Creat dataloader
+2024-08-03 16:05:19,432: Epoch[53]==> Train stage start
+2024-08-03 16:10:27,105: Epoch[53]==> Train end, time cost 307.66833114624023
+2024-08-03 16:10:27,422: ######################################################
+2024-08-03 16:10:27,423: Epoch[54]==> Create pseudo labels
+2024-08-03 16:10:44,715: Start computing jaccard distance
+2024-08-03 16:10:58,201: Jaccard distance compute end, time cost: 13.486369132995605
+2024-08-03 16:11:00,341: Epoch[54]==> Create RGB cluster 794 classes, proxy 1064 kinds
+2024-08-03 16:11:14,937: Start computing jaccard distance
+2024-08-03 16:11:24,715: Jaccard distance compute end, time cost: 9.77825117111206
+2024-08-03 16:11:26,246: Epoch[54]==> Create IR cluster 713 classes, proxy 1211 kinds
+2024-08-03 16:11:29,815: Epoch[54]==> Update Memory
+2024-08-03 16:11:31,159: Epoch[54]==> Start cross modal matching
+2024-08-03 16:11:31,213: Epoch[54]==> Creat dataset
+2024-08-03 16:11:31,504: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   794 |    16696
+          now  thermal |   713 |    13750
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 16:11:31,506: Epoch[54]==> Creat sampler
+2024-08-03 16:11:31,631: Epoch[54]==> Creat dataloader
+2024-08-03 16:11:31,866: Epoch[54]==> Train stage start
+2024-08-03 16:16:26,815: Epoch[54]==> Train end, time cost 294.9335849285126
+2024-08-03 16:16:27,046: Epoch[54] Test start
+2024-08-03 16:19:35,110: Epoch [54], save better model Rank-1: 46.44% to replace original model Rank-1: 44.70%
+2024-08-03 16:19:36,687: Epoch [54] Test end, time cost 189.64084386825562
+2024-08-03 16:19:36,820: ######################################################
+2024-08-03 16:19:36,821: Epoch[55]==> Create pseudo labels
+2024-08-03 16:19:54,714: Start computing jaccard distance
+2024-08-03 16:20:08,502: Jaccard distance compute end, time cost: 13.78786039352417
+2024-08-03 16:20:11,166: Epoch[55]==> Create RGB cluster 799 classes, proxy 1070 kinds
+2024-08-03 16:20:26,247: Start computing jaccard distance
+2024-08-03 16:20:36,240: Jaccard distance compute end, time cost: 9.993579626083374
+2024-08-03 16:20:37,360: Epoch[55]==> Create IR cluster 710 classes, proxy 1211 kinds
+2024-08-03 16:20:39,599: Epoch[55]==> Update Memory
+2024-08-03 16:20:40,894: Epoch[55]==> Start cross modal matching
+2024-08-03 16:20:40,954: Epoch[55]==> Creat dataset
+2024-08-03 16:20:41,147: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   799 |    16710
+          now  thermal |   710 |    13764
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 16:20:41,149: Epoch[55]==> Creat sampler
+2024-08-03 16:20:41,237: Epoch[55]==> Creat dataloader
+2024-08-03 16:20:41,407: Epoch[55]==> Train stage start
+2024-08-03 16:25:51,761: Epoch[55]==> Train end, time cost 310.3395621776581
+2024-08-03 16:25:52,087: Epoch [55], save model for record
+2024-08-03 16:25:53,437: ######################################################
+2024-08-03 16:25:53,438: Epoch[56]==> Create pseudo labels
+2024-08-03 16:26:10,409: Start computing jaccard distance
+2024-08-03 16:26:23,533: Jaccard distance compute end, time cost: 13.124351024627686
+2024-08-03 16:26:25,948: Epoch[56]==> Create RGB cluster 795 classes, proxy 1064 kinds
+2024-08-03 16:26:39,684: Start computing jaccard distance
+2024-08-03 16:26:49,377: Jaccard distance compute end, time cost: 9.693157196044922
+2024-08-03 16:26:50,808: Epoch[56]==> Create IR cluster 710 classes, proxy 1211 kinds
+2024-08-03 16:26:53,442: Epoch[56]==> Update Memory
+2024-08-03 16:26:54,841: Epoch[56]==> Start cross modal matching
+2024-08-03 16:26:54,892: Epoch[56]==> Creat dataset
+2024-08-03 16:26:55,129: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   795 |    16722
+          now  thermal |   710 |    13767
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 16:26:55,130: Epoch[56]==> Creat sampler
+2024-08-03 16:26:55,226: Epoch[56]==> Creat dataloader
+2024-08-03 16:26:55,458: Epoch[56]==> Train stage start
+2024-08-03 16:32:13,017: Epoch[56]==> Train end, time cost 317.55703258514404
+2024-08-03 16:32:13,468: ######################################################
+2024-08-03 16:32:13,469: Epoch[57]==> Create pseudo labels
+2024-08-03 16:32:29,378: Start computing jaccard distance
+2024-08-03 16:32:41,168: Jaccard distance compute end, time cost: 11.7897789478302
+2024-08-03 16:32:43,149: Epoch[57]==> Create RGB cluster 788 classes, proxy 1061 kinds
+2024-08-03 16:32:57,427: Start computing jaccard distance
+2024-08-03 16:33:06,776: Jaccard distance compute end, time cost: 9.348953485488892
+2024-08-03 16:33:08,214: Epoch[57]==> Create IR cluster 708 classes, proxy 1205 kinds
+2024-08-03 16:33:11,074: Epoch[57]==> Update Memory
+2024-08-03 16:33:12,516: Epoch[57]==> Start cross modal matching
+2024-08-03 16:33:12,566: Epoch[57]==> Creat dataset
+2024-08-03 16:33:12,846: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   788 |    16710
+          now  thermal |   708 |    13769
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 16:33:12,847: Epoch[57]==> Creat sampler
+2024-08-03 16:33:12,948: Epoch[57]==> Creat dataloader
+2024-08-03 16:33:13,188: Epoch[57]==> Train stage start
+2024-08-03 16:38:01,160: Epoch[57]==> Train end, time cost 287.9706528186798
+2024-08-03 16:38:01,435: Epoch[57] Test start
+2024-08-03 16:40:35,091: Epoch [57], save better model Rank-1: 46.79% to replace original model Rank-1: 46.44%
+2024-08-03 16:40:36,136: Epoch [57] Test end, time cost 154.70107245445251
+2024-08-03 16:40:36,211: ######################################################
+2024-08-03 16:40:36,212: Epoch[58]==> Create pseudo labels
+2024-08-03 16:40:50,224: Start computing jaccard distance
+2024-08-03 16:41:00,387: Jaccard distance compute end, time cost: 10.162771701812744
+2024-08-03 16:41:02,322: Epoch[58]==> Create RGB cluster 786 classes, proxy 1055 kinds
+2024-08-03 16:41:14,380: Start computing jaccard distance
+2024-08-03 16:41:22,064: Jaccard distance compute end, time cost: 7.683953523635864
+2024-08-03 16:41:23,129: Epoch[58]==> Create IR cluster 711 classes, proxy 1212 kinds
+2024-08-03 16:41:25,111: Epoch[58]==> Update Memory
+2024-08-03 16:41:26,382: Epoch[58]==> Start cross modal matching
+2024-08-03 16:41:26,436: Epoch[58]==> Creat dataset
+2024-08-03 16:41:26,625: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   786 |    16714
+          now  thermal |   711 |    13776
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 16:41:26,626: Epoch[58]==> Creat sampler
+2024-08-03 16:41:26,708: Epoch[58]==> Creat dataloader
+2024-08-03 16:41:26,858: Epoch[58]==> Train stage start
+2024-08-03 16:45:58,735: Epoch[58]==> Train end, time cost 271.8630139827728
+2024-08-03 16:45:59,019: ######################################################
+2024-08-03 16:45:59,019: Epoch[59]==> Create pseudo labels
+2024-08-03 16:46:12,641: Start computing jaccard distance
+2024-08-03 16:46:23,392: Jaccard distance compute end, time cost: 10.750117540359497
+2024-08-03 16:46:24,871: Epoch[59]==> Create RGB cluster 788 classes, proxy 1060 kinds
+2024-08-03 16:46:37,392: Start computing jaccard distance
+2024-08-03 16:46:44,906: Jaccard distance compute end, time cost: 7.514250755310059
+2024-08-03 16:46:45,925: Epoch[59]==> Create IR cluster 709 classes, proxy 1209 kinds
+2024-08-03 16:46:48,429: Epoch[59]==> Update Memory
+2024-08-03 16:46:49,753: Epoch[59]==> Start cross modal matching
+2024-08-03 16:46:49,816: Epoch[59]==> Creat dataset
+2024-08-03 16:46:50,014: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   788 |    16716
+          now  thermal |   709 |    13777
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 16:46:50,015: Epoch[59]==> Creat sampler
+2024-08-03 16:46:50,105: Epoch[59]==> Creat dataloader
+2024-08-03 16:46:50,257: Epoch[59]==> Train stage start
+2024-08-03 16:51:35,740: Epoch[59]==> Train end, time cost 285.4808466434479
+2024-08-03 16:51:36,044: ######################################################
+2024-08-03 16:51:36,045: Epoch[60]==> Create pseudo labels
+2024-08-03 16:51:50,230: Start computing jaccard distance
+2024-08-03 16:52:01,113: Jaccard distance compute end, time cost: 10.882951021194458
+2024-08-03 16:52:02,502: Epoch[60]==> Create RGB cluster 789 classes, proxy 1063 kinds
+2024-08-03 16:52:15,039: Start computing jaccard distance
+2024-08-03 16:52:22,644: Jaccard distance compute end, time cost: 7.605327844619751
+2024-08-03 16:52:23,500: Epoch[60]==> Create IR cluster 709 classes, proxy 1209 kinds
+2024-08-03 16:52:25,514: Epoch[60]==> Update Memory
+2024-08-03 16:52:26,726: Epoch[60]==> Start cross modal matching
+2024-08-03 16:52:26,777: Epoch[60]==> Creat dataset
+2024-08-03 16:52:26,951: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   789 |    16733
+          now  thermal |   709 |    13777
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 16:52:26,952: Epoch[60]==> Creat sampler
+2024-08-03 16:52:27,027: Epoch[60]==> Creat dataloader
+2024-08-03 16:52:27,170: Epoch[60]==> Train stage start
+2024-08-03 16:57:07,332: Epoch[60]==> Train end, time cost 280.1606192588806
+2024-08-03 16:57:07,577: Epoch [60], save model for record
+2024-08-03 16:57:08,619: Epoch[60] Test start
+2024-08-03 16:59:36,883: Epoch [60], save better model Rank-1: 47.27% to replace original model Rank-1: 46.79%
+2024-08-03 16:59:37,889: Epoch [60] Test end, time cost 149.2699418067932
+2024-08-03 16:59:37,954: ######################################################
+2024-08-03 16:59:37,955: Epoch[61]==> Create pseudo labels
+2024-08-03 16:59:51,663: Start computing jaccard distance
+2024-08-03 17:00:00,932: Jaccard distance compute end, time cost: 9.268447875976562
+2024-08-03 17:00:02,133: Epoch[61]==> Create RGB cluster 795 classes, proxy 1062 kinds
+2024-08-03 17:00:13,523: Start computing jaccard distance
+2024-08-03 17:00:20,721: Jaccard distance compute end, time cost: 7.1980414390563965
+2024-08-03 17:00:21,593: Epoch[61]==> Create IR cluster 707 classes, proxy 1208 kinds
+2024-08-03 17:00:23,275: Epoch[61]==> Update Memory
+2024-08-03 17:00:24,808: Epoch[61]==> Start cross modal matching
+2024-08-03 17:00:24,865: Epoch[61]==> Creat dataset
+2024-08-03 17:00:25,051: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   795 |    16727
+          now  thermal |   707 |    13778
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:00:25,052: Epoch[61]==> Creat sampler
+2024-08-03 17:00:25,128: Epoch[61]==> Creat dataloader
+2024-08-03 17:00:25,283: Epoch[61]==> Train stage start
+2024-08-03 17:05:02,214: Epoch[61]==> Train end, time cost 276.93061113357544
+2024-08-03 17:05:02,511: ######################################################
+2024-08-03 17:05:02,511: Epoch[62]==> Create pseudo labels
+2024-08-03 17:05:18,003: Start computing jaccard distance
+2024-08-03 17:05:27,861: Jaccard distance compute end, time cost: 9.858067274093628
+2024-08-03 17:05:29,290: Epoch[62]==> Create RGB cluster 790 classes, proxy 1060 kinds
+2024-08-03 17:05:41,487: Start computing jaccard distance
+2024-08-03 17:05:48,997: Jaccard distance compute end, time cost: 7.51041316986084
+2024-08-03 17:05:49,927: Epoch[62]==> Create IR cluster 707 classes, proxy 1209 kinds
+2024-08-03 17:05:52,086: Epoch[62]==> Update Memory
+2024-08-03 17:05:53,513: Epoch[62]==> Start cross modal matching
+2024-08-03 17:05:53,556: Epoch[62]==> Creat dataset
+2024-08-03 17:05:53,747: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   790 |    16717
+          now  thermal |   707 |    13765
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:05:53,748: Epoch[62]==> Creat sampler
+2024-08-03 17:05:53,829: Epoch[62]==> Creat dataloader
+2024-08-03 17:05:53,985: Epoch[62]==> Train stage start
+2024-08-03 17:10:34,099: Epoch[62]==> Train end, time cost 280.1122601032257
+2024-08-03 17:10:34,406: ######################################################
+2024-08-03 17:10:34,407: Epoch[63]==> Create pseudo labels
+2024-08-03 17:10:51,959: Start computing jaccard distance
+2024-08-03 17:11:05,240: Jaccard distance compute end, time cost: 13.280207633972168
+2024-08-03 17:11:07,991: Epoch[63]==> Create RGB cluster 789 classes, proxy 1059 kinds
+2024-08-03 17:11:22,617: Start computing jaccard distance
+2024-08-03 17:11:32,793: Jaccard distance compute end, time cost: 10.175790786743164
+2024-08-03 17:11:34,666: Epoch[63]==> Create IR cluster 706 classes, proxy 1207 kinds
+2024-08-03 17:11:37,782: Epoch[63]==> Update Memory
+2024-08-03 17:11:39,170: Epoch[63]==> Start cross modal matching
+2024-08-03 17:11:39,217: Epoch[63]==> Creat dataset
+2024-08-03 17:11:39,498: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   789 |    16730
+          now  thermal |   706 |    13774
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:11:39,500: Epoch[63]==> Creat sampler
+2024-08-03 17:11:39,602: Epoch[63]==> Creat dataloader
+2024-08-03 17:11:39,853: Epoch[63]==> Train stage start
+2024-08-03 17:16:55,334: Epoch[63]==> Train end, time cost 315.4781789779663
+2024-08-03 17:16:55,574: Epoch[63] Test start
+2024-08-03 17:19:33,973: Epoch [63], save better model Rank-1: 47.52% to replace original model Rank-1: 47.27%
+2024-08-03 17:19:34,980: Epoch [63] Test end, time cost 159.40606927871704
+2024-08-03 17:19:35,056: ######################################################
+2024-08-03 17:19:35,057: Epoch[64]==> Create pseudo labels
+2024-08-03 17:19:49,190: Start computing jaccard distance
+2024-08-03 17:19:59,219: Jaccard distance compute end, time cost: 10.029635190963745
+2024-08-03 17:20:00,476: Epoch[64]==> Create RGB cluster 792 classes, proxy 1062 kinds
+2024-08-03 17:20:12,137: Start computing jaccard distance
+2024-08-03 17:20:20,187: Jaccard distance compute end, time cost: 8.049729824066162
+2024-08-03 17:20:21,187: Epoch[64]==> Create IR cluster 707 classes, proxy 1208 kinds
+2024-08-03 17:20:22,875: Epoch[64]==> Update Memory
+2024-08-03 17:20:24,187: Epoch[64]==> Start cross modal matching
+2024-08-03 17:20:24,246: Epoch[64]==> Creat dataset
+2024-08-03 17:20:24,452: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   792 |    16730
+          now  thermal |   707 |    13777
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:20:24,453: Epoch[64]==> Creat sampler
+2024-08-03 17:20:24,539: Epoch[64]==> Creat dataloader
+2024-08-03 17:20:24,712: Epoch[64]==> Train stage start
+2024-08-03 17:24:57,547: Epoch[64]==> Train end, time cost 272.81515550613403
+2024-08-03 17:24:57,839: ######################################################
+2024-08-03 17:24:57,839: Epoch[65]==> Create pseudo labels
+2024-08-03 17:25:11,800: Start computing jaccard distance
+2024-08-03 17:25:22,011: Jaccard distance compute end, time cost: 10.210274934768677
+2024-08-03 17:25:23,718: Epoch[65]==> Create RGB cluster 794 classes, proxy 1063 kinds
+2024-08-03 17:25:35,407: Start computing jaccard distance
+2024-08-03 17:25:42,873: Jaccard distance compute end, time cost: 7.465984344482422
+2024-08-03 17:25:43,869: Epoch[65]==> Create IR cluster 706 classes, proxy 1210 kinds
+2024-08-03 17:25:46,483: Epoch[65]==> Update Memory
+2024-08-03 17:25:47,833: Epoch[65]==> Start cross modal matching
+2024-08-03 17:25:47,890: Epoch[65]==> Creat dataset
+2024-08-03 17:25:48,079: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   794 |    16718
+          now  thermal |   706 |    13779
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:25:48,080: Epoch[65]==> Creat sampler
+2024-08-03 17:25:48,158: Epoch[65]==> Creat dataloader
+2024-08-03 17:25:48,318: Epoch[65]==> Train stage start
+2024-08-03 17:30:14,920: Epoch[65]==> Train end, time cost 266.58826541900635
+2024-08-03 17:30:15,154: Epoch [65], save model for record
+2024-08-03 17:30:16,141: ######################################################
+2024-08-03 17:30:16,142: Epoch[66]==> Create pseudo labels
+2024-08-03 17:30:30,420: Start computing jaccard distance
+2024-08-03 17:30:40,106: Jaccard distance compute end, time cost: 9.68579387664795
+2024-08-03 17:30:41,414: Epoch[66]==> Create RGB cluster 790 classes, proxy 1064 kinds
+2024-08-03 17:30:53,513: Start computing jaccard distance
+2024-08-03 17:31:01,209: Jaccard distance compute end, time cost: 7.69600248336792
+2024-08-03 17:31:02,050: Epoch[66]==> Create IR cluster 705 classes, proxy 1210 kinds
+2024-08-03 17:31:04,114: Epoch[66]==> Update Memory
+2024-08-03 17:31:05,462: Epoch[66]==> Start cross modal matching
+2024-08-03 17:31:05,517: Epoch[66]==> Creat dataset
+2024-08-03 17:31:05,701: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   790 |    16728
+          now  thermal |   705 |    13788
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:31:05,703: Epoch[66]==> Creat sampler
+2024-08-03 17:31:05,780: Epoch[66]==> Creat dataloader
+2024-08-03 17:31:05,936: Epoch[66]==> Train stage start
+2024-08-03 17:35:44,658: Epoch[66]==> Train end, time cost 278.7194232940674
+2024-08-03 17:35:44,896: Epoch[66] Test start
+2024-08-03 17:38:10,097: Epoch [66], save better model Rank-1: 47.98% to replace original model Rank-1: 47.52%
+2024-08-03 17:38:11,157: Epoch [66] Test end, time cost 146.26095867156982
+2024-08-03 17:38:11,223: ######################################################
+2024-08-03 17:38:11,224: Epoch[67]==> Create pseudo labels
+2024-08-03 17:38:25,594: Start computing jaccard distance
+2024-08-03 17:38:35,573: Jaccard distance compute end, time cost: 9.979325294494629
+2024-08-03 17:38:36,731: Epoch[67]==> Create RGB cluster 789 classes, proxy 1059 kinds
+2024-08-03 17:38:48,551: Start computing jaccard distance
+2024-08-03 17:38:57,229: Jaccard distance compute end, time cost: 8.677746534347534
+2024-08-03 17:38:58,240: Epoch[67]==> Create IR cluster 704 classes, proxy 1207 kinds
+2024-08-03 17:38:59,749: Epoch[67]==> Update Memory
+2024-08-03 17:39:00,845: Epoch[67]==> Start cross modal matching
+2024-08-03 17:39:00,903: Epoch[67]==> Creat dataset
+2024-08-03 17:39:01,104: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   789 |    16735
+          now  thermal |   704 |    13788
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:39:01,105: Epoch[67]==> Creat sampler
+2024-08-03 17:39:01,192: Epoch[67]==> Creat dataloader
+2024-08-03 17:39:01,345: Epoch[67]==> Train stage start
+2024-08-03 17:43:48,892: Epoch[67]==> Train end, time cost 287.54517459869385
+2024-08-03 17:43:49,185: ######################################################
+2024-08-03 17:43:49,186: Epoch[68]==> Create pseudo labels
+2024-08-03 17:44:07,347: Start computing jaccard distance
+2024-08-03 17:44:20,801: Jaccard distance compute end, time cost: 13.45417070388794
+2024-08-03 17:44:23,145: Epoch[68]==> Create RGB cluster 787 classes, proxy 1057 kinds
+2024-08-03 17:44:38,448: Start computing jaccard distance
+2024-08-03 17:44:47,680: Jaccard distance compute end, time cost: 9.232709646224976
+2024-08-03 17:44:48,844: Epoch[68]==> Create IR cluster 706 classes, proxy 1208 kinds
+2024-08-03 17:44:51,135: Epoch[68]==> Update Memory
+2024-08-03 17:44:52,944: Epoch[68]==> Start cross modal matching
+2024-08-03 17:44:53,000: Epoch[68]==> Creat dataset
+2024-08-03 17:44:53,340: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   787 |    16740
+          now  thermal |   706 |    13778
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:44:53,342: Epoch[68]==> Creat sampler
+2024-08-03 17:44:53,486: Epoch[68]==> Creat dataloader
+2024-08-03 17:44:53,735: Epoch[68]==> Train stage start
+2024-08-03 17:49:54,516: Epoch[68]==> Train end, time cost 300.77862191200256
+2024-08-03 17:49:54,805: ######################################################
+2024-08-03 17:49:54,806: Epoch[69]==> Create pseudo labels
+2024-08-03 17:50:08,992: Start computing jaccard distance
+2024-08-03 17:50:18,617: Jaccard distance compute end, time cost: 9.624919652938843
+2024-08-03 17:50:20,102: Epoch[69]==> Create RGB cluster 783 classes, proxy 1049 kinds
+2024-08-03 17:50:32,303: Start computing jaccard distance
+2024-08-03 17:50:40,032: Jaccard distance compute end, time cost: 7.7291882038116455
+2024-08-03 17:50:40,978: Epoch[69]==> Create IR cluster 702 classes, proxy 1202 kinds
+2024-08-03 17:50:43,045: Epoch[69]==> Update Memory
+2024-08-03 17:50:44,362: Epoch[69]==> Start cross modal matching
+2024-08-03 17:50:44,421: Epoch[69]==> Creat dataset
+2024-08-03 17:50:44,599: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   783 |    16746
+          now  thermal |   702 |    13782
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:50:44,600: Epoch[69]==> Creat sampler
+2024-08-03 17:50:44,680: Epoch[69]==> Creat dataloader
+2024-08-03 17:50:44,826: Epoch[69]==> Train stage start
+2024-08-03 17:55:23,440: Epoch[69]==> Train end, time cost 278.6129951477051
+2024-08-03 17:55:23,724: Epoch[69] Test start
+2024-08-03 17:58:53,227: Epoch [69] Test end, time cost 209.50369334220886
+2024-08-03 17:58:53,325: ######################################################
+2024-08-03 17:58:53,325: Epoch[70]==> Create pseudo labels
+2024-08-03 17:59:10,520: Start computing jaccard distance
+2024-08-03 17:59:21,909: Jaccard distance compute end, time cost: 11.389515399932861
+2024-08-03 17:59:23,948: Epoch[70]==> Create RGB cluster 785 classes, proxy 1054 kinds
+2024-08-03 17:59:38,835: Start computing jaccard distance
+2024-08-03 17:59:48,513: Jaccard distance compute end, time cost: 9.678211212158203
+2024-08-03 17:59:49,942: Epoch[70]==> Create IR cluster 701 classes, proxy 1201 kinds
+2024-08-03 17:59:52,295: Epoch[70]==> Update Memory
+2024-08-03 17:59:53,948: Epoch[70]==> Start cross modal matching
+2024-08-03 17:59:53,997: Epoch[70]==> Creat dataset
+2024-08-03 17:59:54,267: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   785 |    16749
+          now  thermal |   701 |    13780
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 17:59:54,268: Epoch[70]==> Creat sampler
+2024-08-03 17:59:54,372: Epoch[70]==> Creat dataloader
+2024-08-03 17:59:54,617: Epoch[70]==> Train stage start
+2024-08-03 18:05:30,053: Epoch[70]==> Train end, time cost 335.43388843536377
+2024-08-03 18:05:30,370: Epoch [70], save model for record
+2024-08-03 18:05:31,748: ######################################################
+2024-08-03 18:05:31,749: Epoch[71]==> Create pseudo labels
+2024-08-03 18:05:49,375: Start computing jaccard distance
+2024-08-03 18:06:02,372: Jaccard distance compute end, time cost: 12.997134685516357
+2024-08-03 18:06:04,555: Epoch[71]==> Create RGB cluster 787 classes, proxy 1053 kinds
+2024-08-03 18:06:18,927: Start computing jaccard distance
+2024-08-03 18:06:28,194: Jaccard distance compute end, time cost: 9.266767740249634
+2024-08-03 18:06:29,701: Epoch[71]==> Create IR cluster 701 classes, proxy 1204 kinds
+2024-08-03 18:06:33,146: Epoch[71]==> Update Memory
+2024-08-03 18:06:34,519: Epoch[71]==> Start cross modal matching
+2024-08-03 18:06:34,565: Epoch[71]==> Creat dataset
+2024-08-03 18:06:34,808: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   787 |    16751
+          now  thermal |   701 |    13787
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 18:06:34,809: Epoch[71]==> Creat sampler
+2024-08-03 18:06:34,919: Epoch[71]==> Creat dataloader
+2024-08-03 18:06:35,159: Epoch[71]==> Train stage start
+2024-08-03 18:11:53,486: Epoch[71]==> Train end, time cost 318.32588267326355
+2024-08-03 18:11:53,821: ######################################################
+2024-08-03 18:11:53,822: Epoch[72]==> Create pseudo labels
+2024-08-03 18:12:09,938: Start computing jaccard distance
+2024-08-03 18:12:21,449: Jaccard distance compute end, time cost: 11.511281490325928
+2024-08-03 18:12:23,411: Epoch[72]==> Create RGB cluster 786 classes, proxy 1057 kinds
+2024-08-03 18:12:36,544: Start computing jaccard distance
+2024-08-03 18:12:44,765: Jaccard distance compute end, time cost: 8.220242023468018
+2024-08-03 18:12:45,946: Epoch[72]==> Create IR cluster 703 classes, proxy 1206 kinds
+2024-08-03 18:12:49,487: Epoch[72]==> Update Memory
+2024-08-03 18:12:50,705: Epoch[72]==> Start cross modal matching
+2024-08-03 18:12:50,746: Epoch[72]==> Creat dataset
+2024-08-03 18:12:50,952: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   786 |    16738
+          now  thermal |   703 |    13784
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 18:12:50,953: Epoch[72]==> Creat sampler
+2024-08-03 18:12:51,034: Epoch[72]==> Creat dataloader
+2024-08-03 18:12:51,214: Epoch[72]==> Train stage start
+2024-08-03 18:18:05,131: Epoch[72]==> Train end, time cost 313.9159872531891
+2024-08-03 18:18:05,408: Epoch[72] Test start
+2024-08-03 18:21:25,506: Epoch [72] Test end, time cost 200.0975306034088
+2024-08-03 18:21:25,613: ######################################################
+2024-08-03 18:21:25,613: Epoch[73]==> Create pseudo labels
+2024-08-03 18:21:42,742: Start computing jaccard distance
+2024-08-03 18:21:54,389: Jaccard distance compute end, time cost: 11.646960496902466
+2024-08-03 18:21:56,291: Epoch[73]==> Create RGB cluster 791 classes, proxy 1060 kinds
+2024-08-03 18:22:10,381: Start computing jaccard distance
+2024-08-03 18:22:19,745: Jaccard distance compute end, time cost: 9.363295078277588
+2024-08-03 18:22:21,462: Epoch[73]==> Create IR cluster 698 classes, proxy 1200 kinds
+2024-08-03 18:22:24,512: Epoch[73]==> Update Memory
+2024-08-03 18:22:26,196: Epoch[73]==> Start cross modal matching
+2024-08-03 18:22:26,248: Epoch[73]==> Creat dataset
+2024-08-03 18:22:26,513: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   791 |    16744
+          now  thermal |   698 |    13786
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 18:22:26,515: Epoch[73]==> Creat sampler
+2024-08-03 18:22:26,710: Epoch[73]==> Creat dataloader
+2024-08-03 18:22:26,974: Epoch[73]==> Train stage start
+2024-08-03 18:27:39,537: Epoch[73]==> Train end, time cost 312.56168007850647
+2024-08-03 18:27:39,911: ######################################################
+2024-08-03 18:27:39,911: Epoch[74]==> Create pseudo labels
+2024-08-03 18:27:54,599: Start computing jaccard distance
+2024-08-03 18:28:04,736: Jaccard distance compute end, time cost: 10.136955976486206
+2024-08-03 18:28:06,292: Epoch[74]==> Create RGB cluster 786 classes, proxy 1055 kinds
+2024-08-03 18:28:20,033: Start computing jaccard distance
+2024-08-03 18:28:31,064: Jaccard distance compute end, time cost: 11.03157091140747
+2024-08-03 18:28:33,048: Epoch[74]==> Create IR cluster 704 classes, proxy 1206 kinds
+2024-08-03 18:28:35,675: Epoch[74]==> Update Memory
+2024-08-03 18:28:37,049: Epoch[74]==> Start cross modal matching
+2024-08-03 18:28:37,095: Epoch[74]==> Creat dataset
+2024-08-03 18:28:37,375: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   786 |    16752
+          now  thermal |   704 |    13786
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 18:28:37,377: Epoch[74]==> Creat sampler
+2024-08-03 18:28:37,474: Epoch[74]==> Creat dataloader
+2024-08-03 18:28:37,716: Epoch[74]==> Train stage start
+2024-08-03 18:34:26,971: Epoch[74]==> Train end, time cost 349.25376629829407
+2024-08-03 18:34:27,350: ######################################################
+2024-08-03 18:34:27,352: Epoch[75]==> Create pseudo labels
+2024-08-03 18:34:45,174: Start computing jaccard distance
+2024-08-03 18:34:58,581: Jaccard distance compute end, time cost: 13.407663822174072
+2024-08-03 18:35:01,114: Epoch[75]==> Create RGB cluster 789 classes, proxy 1059 kinds
+2024-08-03 18:35:16,438: Start computing jaccard distance
+2024-08-03 18:35:27,033: Jaccard distance compute end, time cost: 10.594777822494507
+2024-08-03 18:35:28,614: Epoch[75]==> Create IR cluster 702 classes, proxy 1205 kinds
+2024-08-03 18:35:31,883: Epoch[75]==> Update Memory
+2024-08-03 18:35:33,070: Epoch[75]==> Start cross modal matching
+2024-08-03 18:35:33,112: Epoch[75]==> Creat dataset
+2024-08-03 18:35:33,346: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   789 |    16746
+          now  thermal |   702 |    13782
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 18:35:33,347: Epoch[75]==> Creat sampler
+2024-08-03 18:35:33,444: Epoch[75]==> Creat dataloader
+2024-08-03 18:35:33,729: Epoch[75]==> Train stage start
+2024-08-03 18:41:10,126: Epoch[75]==> Train end, time cost 336.39580726623535
+2024-08-03 18:41:10,455: Epoch [75], save model for record
+2024-08-03 18:41:11,740: Epoch[75] Test start
+2024-08-03 18:44:29,038: Epoch [75] Test end, time cost 197.29764866828918
+2024-08-03 18:44:29,129: ######################################################
+2024-08-03 18:44:29,130: Epoch[76]==> Create pseudo labels
+2024-08-03 18:44:46,209: Start computing jaccard distance
+2024-08-03 18:44:57,333: Jaccard distance compute end, time cost: 11.124154090881348
+2024-08-03 18:44:59,138: Epoch[76]==> Create RGB cluster 783 classes, proxy 1053 kinds
+2024-08-03 18:45:12,673: Start computing jaccard distance
+2024-08-03 18:45:21,559: Jaccard distance compute end, time cost: 8.885652542114258
+2024-08-03 18:45:23,032: Epoch[76]==> Create IR cluster 706 classes, proxy 1212 kinds
+2024-08-03 18:45:25,514: Epoch[76]==> Update Memory
+2024-08-03 18:45:27,253: Epoch[76]==> Start cross modal matching
+2024-08-03 18:45:27,305: Epoch[76]==> Creat dataset
+2024-08-03 18:45:27,602: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   783 |    16753
+          now  thermal |   706 |    13772
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 18:45:27,604: Epoch[76]==> Creat sampler
+2024-08-03 18:45:27,756: Epoch[76]==> Creat dataloader
+2024-08-03 18:45:28,080: Epoch[76]==> Train stage start
+2024-08-03 18:50:51,698: Epoch[76]==> Train end, time cost 323.61552023887634
+2024-08-03 18:50:52,081: ######################################################
+2024-08-03 18:50:52,082: Epoch[77]==> Create pseudo labels
+2024-08-03 18:51:09,263: Start computing jaccard distance
+2024-08-03 18:51:20,442: Jaccard distance compute end, time cost: 11.178215980529785
+2024-08-03 18:51:22,370: Epoch[77]==> Create RGB cluster 789 classes, proxy 1053 kinds
+2024-08-03 18:51:36,814: Start computing jaccard distance
+2024-08-03 18:51:46,257: Jaccard distance compute end, time cost: 9.442172288894653
+2024-08-03 18:51:48,037: Epoch[77]==> Create IR cluster 703 classes, proxy 1203 kinds
+2024-08-03 18:51:51,050: Epoch[77]==> Update Memory
+2024-08-03 18:51:52,310: Epoch[77]==> Start cross modal matching
+2024-08-03 18:51:52,349: Epoch[77]==> Creat dataset
+2024-08-03 18:51:52,576: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   789 |    16746
+          now  thermal |   703 |    13790
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 18:51:52,578: Epoch[77]==> Creat sampler
+2024-08-03 18:51:52,672: Epoch[77]==> Creat dataloader
+2024-08-03 18:51:52,873: Epoch[77]==> Train stage start
+2024-08-03 18:57:09,765: Epoch[77]==> Train end, time cost 316.890949010849
+2024-08-03 18:57:10,127: ######################################################
+2024-08-03 18:57:10,128: Epoch[78]==> Create pseudo labels
+2024-08-03 18:57:26,211: Start computing jaccard distance
+2024-08-03 18:57:37,504: Jaccard distance compute end, time cost: 11.293030261993408
+2024-08-03 18:57:39,684: Epoch[78]==> Create RGB cluster 784 classes, proxy 1052 kinds
+2024-08-03 18:57:53,230: Start computing jaccard distance
+2024-08-03 18:58:01,686: Jaccard distance compute end, time cost: 8.456205368041992
+2024-08-03 18:58:02,867: Epoch[78]==> Create IR cluster 706 classes, proxy 1209 kinds
+2024-08-03 18:58:07,130: Epoch[78]==> Update Memory
+2024-08-03 18:58:08,548: Epoch[78]==> Start cross modal matching
+2024-08-03 18:58:08,592: Epoch[78]==> Creat dataset
+2024-08-03 18:58:08,823: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   784 |    16739
+          now  thermal |   706 |    13781
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 18:58:08,825: Epoch[78]==> Creat sampler
+2024-08-03 18:58:08,916: Epoch[78]==> Creat dataloader
+2024-08-03 18:58:09,138: Epoch[78]==> Train stage start
+2024-08-03 19:03:42,695: Epoch[78]==> Train end, time cost 333.5554189682007
+2024-08-03 19:03:42,985: Epoch[78] Test start
+2024-08-03 19:07:10,199: Epoch [78] Test end, time cost 207.21486163139343
+2024-08-03 19:07:10,296: ######################################################
+2024-08-03 19:07:10,296: Epoch[79]==> Create pseudo labels
+2024-08-03 19:07:27,554: Start computing jaccard distance
+2024-08-03 19:07:39,741: Jaccard distance compute end, time cost: 12.186684131622314
+2024-08-03 19:07:41,684: Epoch[79]==> Create RGB cluster 776 classes, proxy 1044 kinds
+2024-08-03 19:07:56,447: Start computing jaccard distance
+2024-08-03 19:08:05,667: Jaccard distance compute end, time cost: 9.220236778259277
+2024-08-03 19:08:07,257: Epoch[79]==> Create IR cluster 703 classes, proxy 1203 kinds
+2024-08-03 19:08:10,240: Epoch[79]==> Update Memory
+2024-08-03 19:08:11,796: Epoch[79]==> Start cross modal matching
+2024-08-03 19:08:11,842: Epoch[79]==> Creat dataset
+2024-08-03 19:08:12,151: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   776 |    16738
+          now  thermal |   703 |    13770
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 19:08:12,154: Epoch[79]==> Creat sampler
+2024-08-03 19:08:12,262: Epoch[79]==> Creat dataloader
+2024-08-03 19:08:12,551: Epoch[79]==> Train stage start
+2024-08-03 19:13:42,616: Epoch[79]==> Train end, time cost 330.063241481781
+2024-08-03 19:13:42,926: ######################################################
+2024-08-03 19:13:42,927: Epoch[80]==> Create pseudo labels
+2024-08-03 19:13:58,236: Start computing jaccard distance
+2024-08-03 19:14:08,996: Jaccard distance compute end, time cost: 10.759632349014282
+2024-08-03 19:14:10,701: Epoch[80]==> Create RGB cluster 778 classes, proxy 1047 kinds
+2024-08-03 19:14:25,044: Start computing jaccard distance
+2024-08-03 19:14:33,548: Jaccard distance compute end, time cost: 8.504139423370361
+2024-08-03 19:14:34,526: Epoch[80]==> Create IR cluster 706 classes, proxy 1207 kinds
+2024-08-03 19:14:36,791: Epoch[80]==> Update Memory
+2024-08-03 19:14:38,023: Epoch[80]==> Start cross modal matching
+2024-08-03 19:14:38,067: Epoch[80]==> Creat dataset
+2024-08-03 19:14:38,276: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   778 |    16735
+          now  thermal |   706 |    13781
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 19:14:38,277: Epoch[80]==> Creat sampler
+2024-08-03 19:14:38,377: Epoch[80]==> Creat dataloader
+2024-08-03 19:14:38,595: Epoch[80]==> Train stage start
+2024-08-03 19:19:44,870: Epoch[80]==> Train end, time cost 306.2735834121704
+2024-08-03 19:19:45,230: Epoch [80], save model for record
+2024-08-03 19:19:46,572: ######################################################
+2024-08-03 19:19:46,573: Epoch[81]==> Create pseudo labels
+2024-08-03 19:20:03,580: Start computing jaccard distance
+2024-08-03 19:20:14,947: Jaccard distance compute end, time cost: 11.367072343826294
+2024-08-03 19:20:16,514: Epoch[81]==> Create RGB cluster 778 classes, proxy 1049 kinds
+2024-08-03 19:20:29,920: Start computing jaccard distance
+2024-08-03 19:20:38,819: Jaccard distance compute end, time cost: 8.89950680732727
+2024-08-03 19:20:40,136: Epoch[81]==> Create IR cluster 704 classes, proxy 1205 kinds
+2024-08-03 19:20:42,219: Epoch[81]==> Update Memory
+2024-08-03 19:20:43,654: Epoch[81]==> Start cross modal matching
+2024-08-03 19:20:43,692: Epoch[81]==> Creat dataset
+2024-08-03 19:20:43,891: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   778 |    16734
+          now  thermal |   704 |    13788
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 19:20:43,893: Epoch[81]==> Creat sampler
+2024-08-03 19:20:43,983: Epoch[81]==> Creat dataloader
+2024-08-03 19:20:44,171: Epoch[81]==> Train stage start
+2024-08-03 19:25:56,143: Epoch[81]==> Train end, time cost 311.96150159835815
+2024-08-03 19:25:56,411: Epoch[81] Test start
+2024-08-03 19:28:54,748: Epoch [81], save better model Rank-1: 48.01% to replace original model Rank-1: 47.98%
+2024-08-03 19:28:55,934: Epoch [81] Test end, time cost 179.52246952056885
+2024-08-03 19:28:56,007: ######################################################
+2024-08-03 19:28:56,008: Epoch[82]==> Create pseudo labels
+2024-08-03 19:29:11,335: Start computing jaccard distance
+2024-08-03 19:29:22,242: Jaccard distance compute end, time cost: 10.90682601928711
+2024-08-03 19:29:24,111: Epoch[82]==> Create RGB cluster 778 classes, proxy 1051 kinds
+2024-08-03 19:29:37,761: Start computing jaccard distance
+2024-08-03 19:29:46,405: Jaccard distance compute end, time cost: 8.643722772598267
+2024-08-03 19:29:47,648: Epoch[82]==> Create IR cluster 702 classes, proxy 1202 kinds
+2024-08-03 19:29:49,513: Epoch[82]==> Update Memory
+2024-08-03 19:29:50,878: Epoch[82]==> Start cross modal matching
+2024-08-03 19:29:50,922: Epoch[82]==> Creat dataset
+2024-08-03 19:29:51,146: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   778 |    16750
+          now  thermal |   702 |    13784
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 19:29:51,147: Epoch[82]==> Creat sampler
+2024-08-03 19:29:51,248: Epoch[82]==> Creat dataloader
+2024-08-03 19:29:51,508: Epoch[82]==> Train stage start
+2024-08-03 19:34:47,107: Epoch[82]==> Train end, time cost 295.5982229709625
+2024-08-03 19:34:47,419: ######################################################
+2024-08-03 19:34:47,419: Epoch[83]==> Create pseudo labels
+2024-08-03 19:35:02,004: Start computing jaccard distance
+2024-08-03 19:35:12,472: Jaccard distance compute end, time cost: 10.467427968978882
+2024-08-03 19:35:13,763: Epoch[83]==> Create RGB cluster 782 classes, proxy 1053 kinds
+2024-08-03 19:35:26,349: Start computing jaccard distance
+2024-08-03 19:35:34,616: Jaccard distance compute end, time cost: 8.267549514770508
+2024-08-03 19:35:35,548: Epoch[83]==> Create IR cluster 704 classes, proxy 1208 kinds
+2024-08-03 19:35:37,262: Epoch[83]==> Update Memory
+2024-08-03 19:35:38,561: Epoch[83]==> Start cross modal matching
+2024-08-03 19:35:38,612: Epoch[83]==> Creat dataset
+2024-08-03 19:35:38,801: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   782 |    16741
+          now  thermal |   704 |    13798
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 19:35:38,802: Epoch[83]==> Creat sampler
+2024-08-03 19:35:38,879: Epoch[83]==> Creat dataloader
+2024-08-03 19:35:39,041: Epoch[83]==> Train stage start
+2024-08-03 19:40:41,781: Epoch[83]==> Train end, time cost 302.7389783859253
+2024-08-03 19:40:42,168: ######################################################
+2024-08-03 19:40:42,169: Epoch[84]==> Create pseudo labels
+2024-08-03 19:40:58,376: Start computing jaccard distance
+2024-08-03 19:41:09,196: Jaccard distance compute end, time cost: 10.819854974746704
+2024-08-03 19:41:10,642: Epoch[84]==> Create RGB cluster 779 classes, proxy 1045 kinds
+2024-08-03 19:41:23,450: Start computing jaccard distance
+2024-08-03 19:41:31,718: Jaccard distance compute end, time cost: 8.26784610748291
+2024-08-03 19:41:32,842: Epoch[84]==> Create IR cluster 702 classes, proxy 1206 kinds
+2024-08-03 19:41:35,495: Epoch[84]==> Update Memory
+2024-08-03 19:41:36,893: Epoch[84]==> Start cross modal matching
+2024-08-03 19:41:36,929: Epoch[84]==> Creat dataset
+2024-08-03 19:41:37,152: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   779 |    16744
+          now  thermal |   702 |    13789
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 19:41:37,153: Epoch[84]==> Creat sampler
+2024-08-03 19:41:37,268: Epoch[84]==> Creat dataloader
+2024-08-03 19:41:37,498: Epoch[84]==> Train stage start
+2024-08-03 19:46:22,593: Epoch[84]==> Train end, time cost 285.0938012599945
+2024-08-03 19:46:22,828: Epoch[84] Test start
+2024-08-03 19:49:04,940: Epoch [84] Test end, time cost 162.11162567138672
+2024-08-03 19:49:05,031: ######################################################
+2024-08-03 19:49:05,031: Epoch[85]==> Create pseudo labels
+2024-08-03 19:49:19,248: Start computing jaccard distance
+2024-08-03 19:49:29,313: Jaccard distance compute end, time cost: 10.064752578735352
+2024-08-03 19:49:30,718: Epoch[85]==> Create RGB cluster 776 classes, proxy 1043 kinds
+2024-08-03 19:49:43,125: Start computing jaccard distance
+2024-08-03 19:49:51,268: Jaccard distance compute end, time cost: 8.143022298812866
+2024-08-03 19:49:52,299: Epoch[85]==> Create IR cluster 704 classes, proxy 1206 kinds
+2024-08-03 19:49:54,142: Epoch[85]==> Update Memory
+2024-08-03 19:49:55,472: Epoch[85]==> Start cross modal matching
+2024-08-03 19:49:55,529: Epoch[85]==> Creat dataset
+2024-08-03 19:49:55,724: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   776 |    16740
+          now  thermal |   704 |    13790
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 19:49:55,725: Epoch[85]==> Creat sampler
+2024-08-03 19:49:55,804: Epoch[85]==> Creat dataloader
+2024-08-03 19:49:55,955: Epoch[85]==> Train stage start
+2024-08-03 19:54:40,817: Epoch[85]==> Train end, time cost 284.861221075058
+2024-08-03 19:54:41,166: Epoch [85], save model for record
+2024-08-03 19:54:42,496: ######################################################
+2024-08-03 19:54:42,496: Epoch[86]==> Create pseudo labels
+2024-08-03 19:54:59,209: Start computing jaccard distance
+2024-08-03 19:55:11,180: Jaccard distance compute end, time cost: 11.971035718917847
+2024-08-03 19:55:12,808: Epoch[86]==> Create RGB cluster 785 classes, proxy 1050 kinds
+2024-08-03 19:55:26,590: Start computing jaccard distance
+2024-08-03 19:55:35,490: Jaccard distance compute end, time cost: 8.90039348602295
+2024-08-03 19:55:36,819: Epoch[86]==> Create IR cluster 706 classes, proxy 1204 kinds
+2024-08-03 19:55:39,467: Epoch[86]==> Update Memory
+2024-08-03 19:55:40,701: Epoch[86]==> Start cross modal matching
+2024-08-03 19:55:40,744: Epoch[86]==> Creat dataset
+2024-08-03 19:55:41,021: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   785 |    16741
+          now  thermal |   706 |    13785
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 19:55:41,023: Epoch[86]==> Creat sampler
+2024-08-03 19:55:41,137: Epoch[86]==> Creat dataloader
+2024-08-03 19:55:41,331: Epoch[86]==> Train stage start
+2024-08-03 20:00:41,361: Epoch[86]==> Train end, time cost 300.02851128578186
+2024-08-03 20:00:41,686: ######################################################
+2024-08-03 20:00:41,687: Epoch[87]==> Create pseudo labels
+2024-08-03 20:00:59,476: Start computing jaccard distance
+2024-08-03 20:01:10,470: Jaccard distance compute end, time cost: 10.99396014213562
+2024-08-03 20:01:11,997: Epoch[87]==> Create RGB cluster 780 classes, proxy 1047 kinds
+2024-08-03 20:01:24,839: Start computing jaccard distance
+2024-08-03 20:01:32,591: Jaccard distance compute end, time cost: 7.752032279968262
+2024-08-03 20:01:33,475: Epoch[87]==> Create IR cluster 702 classes, proxy 1203 kinds
+2024-08-03 20:01:35,954: Epoch[87]==> Update Memory
+2024-08-03 20:01:37,368: Epoch[87]==> Start cross modal matching
+2024-08-03 20:01:37,423: Epoch[87]==> Creat dataset
+2024-08-03 20:01:37,623: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   780 |    16741
+          now  thermal |   702 |    13796
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 20:01:37,624: Epoch[87]==> Creat sampler
+2024-08-03 20:01:37,714: Epoch[87]==> Creat dataloader
+2024-08-03 20:01:37,876: Epoch[87]==> Train stage start
+2024-08-03 20:06:36,430: Epoch[87]==> Train end, time cost 298.5529670715332
+2024-08-03 20:06:36,673: Epoch[87] Test start
+2024-08-03 20:09:31,337: Epoch [87] Test end, time cost 174.66465044021606
+2024-08-03 20:09:31,418: ######################################################
+2024-08-03 20:09:31,418: Epoch[88]==> Create pseudo labels
+2024-08-03 20:09:47,673: Start computing jaccard distance
+2024-08-03 20:09:59,855: Jaccard distance compute end, time cost: 12.18255090713501
+2024-08-03 20:10:01,889: Epoch[88]==> Create RGB cluster 775 classes, proxy 1044 kinds
+2024-08-03 20:10:15,856: Start computing jaccard distance
+2024-08-03 20:10:24,354: Jaccard distance compute end, time cost: 8.49776029586792
+2024-08-03 20:10:25,436: Epoch[88]==> Create IR cluster 702 classes, proxy 1204 kinds
+2024-08-03 20:10:27,757: Epoch[88]==> Update Memory
+2024-08-03 20:10:28,979: Epoch[88]==> Start cross modal matching
+2024-08-03 20:10:29,017: Epoch[88]==> Creat dataset
+2024-08-03 20:10:29,240: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   775 |    16742
+          now  thermal |   702 |    13789
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 20:10:29,241: Epoch[88]==> Creat sampler
+2024-08-03 20:10:29,330: Epoch[88]==> Creat dataloader
+2024-08-03 20:10:29,519: Epoch[88]==> Train stage start
+2024-08-03 20:15:17,861: Epoch[88]==> Train end, time cost 288.3293855190277
+2024-08-03 20:15:18,171: ######################################################
+2024-08-03 20:15:18,172: Epoch[89]==> Create pseudo labels
+2024-08-03 20:15:33,340: Start computing jaccard distance
+2024-08-03 20:15:44,232: Jaccard distance compute end, time cost: 10.892091035842896
+2024-08-03 20:15:46,159: Epoch[89]==> Create RGB cluster 781 classes, proxy 1055 kinds
+2024-08-03 20:15:58,818: Start computing jaccard distance
+2024-08-03 20:16:07,446: Jaccard distance compute end, time cost: 8.628222703933716
+2024-08-03 20:16:08,624: Epoch[89]==> Create IR cluster 706 classes, proxy 1208 kinds
+2024-08-03 20:16:10,606: Epoch[89]==> Update Memory
+2024-08-03 20:16:11,859: Epoch[89]==> Start cross modal matching
+2024-08-03 20:16:11,909: Epoch[89]==> Creat dataset
+2024-08-03 20:16:12,098: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   781 |    16751
+          now  thermal |   706 |    13790
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 20:16:12,099: Epoch[89]==> Creat sampler
+2024-08-03 20:16:12,181: Epoch[89]==> Creat dataloader
+2024-08-03 20:16:12,344: Epoch[89]==> Train stage start
+2024-08-03 20:21:01,585: Epoch[89]==> Train end, time cost 289.2391860485077
+2024-08-03 20:21:01,989: ######################################################
+2024-08-03 20:21:01,990: Epoch[90]==> Create pseudo labels
+2024-08-03 20:21:18,088: Start computing jaccard distance
+2024-08-03 20:21:29,166: Jaccard distance compute end, time cost: 11.077896356582642
+2024-08-03 20:21:30,913: Epoch[90]==> Create RGB cluster 779 classes, proxy 1050 kinds
+2024-08-03 20:21:44,302: Start computing jaccard distance
+2024-08-03 20:21:52,891: Jaccard distance compute end, time cost: 8.58879542350769
+2024-08-03 20:21:54,318: Epoch[90]==> Create IR cluster 706 classes, proxy 1211 kinds
+2024-08-03 20:21:57,295: Epoch[90]==> Update Memory
+2024-08-03 20:21:58,431: Epoch[90]==> Start cross modal matching
+2024-08-03 20:21:58,469: Epoch[90]==> Creat dataset
+2024-08-03 20:21:58,668: 
+        ============== Dataset Statistics =============
+        -----------------------------------------------
+               subset  | # ids | # images
+          real visible |   713 |    16946
+          real thermal |   713 |    13975
+          
+          now  visible |   779 |    16743
+          now  thermal |   706 |    13789
+        -----------------------------------------------
+        ===============================================
+            
+2024-08-03 20:21:58,669: Epoch[90]==> Creat sampler
+2024-08-03 20:21:58,759: Epoch[90]==> Creat dataloader
+2024-08-03 20:21:58,941: Epoch[90]==> Train stage start
+2024-08-03 20:27:06,229: Epoch[90]==> Train end, time cost 307.2870943546295
+2024-08-03 20:27:06,458: Epoch [90], save model for record
+2024-08-03 20:27:07,446: Epoch[90] Test start
+2024-08-03 20:29:28,585: Epoch [90] Test end, time cost 141.1387221813202
+2024-08-03 20:29:28,586: stage2 running time: 16897.85723229198
