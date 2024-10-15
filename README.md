@@ -16,7 +16,7 @@ pip install scikit-learn==1.4.2 scipy==1.13.1 ftfy==6.2.0 regex==2024.7.24 tqdm=
 ### Prepare Datasets
 
 ```shell
-cd examples && mkdir data
+cd ../ && mkdir dataset
 ```
 Download the person datasets LLCM, RegDB, and the SYSU-MM01.
 
