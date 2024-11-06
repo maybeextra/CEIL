@@ -32,11 +32,12 @@ def gnn_reranking(query, gallery, query_cam = None, gall_cam = None, k1=28, k2=8
     D = torch.ones_like(S).half()
     if query_cam is not None and gall_cam is not None:
         labels_cam = np.concatenate((query_cam, gall_cam))
-        for i, rank in enumerate(initial_rank):
-            main_cam = labels_cam[i]
-            same = labels_cam[rank.cpu()] == main_cam
-            D[i, :][same] *= 0.5
-            D[i, :][~same] *= 2
+        labels_cam_tensor = torch.from_numpy(labels_cam).to(S.device)
+        main_cam = labels_cam_tensor.unsqueeze(1)
+        ranked_cam = labels_cam_tensor[initial_rank]
+        same_camera_mask = (ranked_cam == main_cam)
+        D[same_camera_mask] *= 0.5
+        D[~same_camera_mask] *= 2
 
     initial_rank = initial_rank.int()
     S = (S ** 2).half()
