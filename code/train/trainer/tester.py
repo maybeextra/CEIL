@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as patches
 import copy
+import time
 
 class Tester(Base_trainer):
     def __init__(self, model, args, kind=None, writer=None, optimizer=None, scheduler=None, scaler=None):
@@ -123,10 +124,13 @@ class Tester(Base_trainer):
             dist = -torch.matmul(query_feat, gall_feat.T).cpu().numpy()
             cmc_1, mAP_1, mINP_1 = _eval(dist, query_label, gall_label, query_cam, gall_cam)
 
+            start_time = time.time()
             dist = -self.rerank(query_feat, gall_feat, query_cam, gall_cam, k1=args.gnn_k1, k2=args.gnn_k2)
+            elapsed_time = time.time() - start_time
+            avg_time += elapsed_time
             cmc_2, mAP_2, mINP_2 = _eval(dist, query_label, gall_label, query_cam, gall_cam)
 
-            logging.info(f'Test Trial: {trial}')
+            logging.info(f'Test Trial: {trial}, Elapsed time: {elapsed_time:.3}s, Average time: {avg_time:.4}s')
             logging.info(f"Performance: Rank-1: {cmc_1[0]:.2%} | Rank-5: {cmc_1[4]:.2%} | Rank-10: {cmc_1[9]:.2%}| Rank-20: {cmc_1[19]:.2%}| mAP: {mAP_1:.2%}| mINP: {mINP_1:.2%}")
             logging.info(f"R Performance: Rank-1: {cmc_2[0]:.2%} | Rank-5: {cmc_2[4]:.2%} | Rank-10: {cmc_2[9]:.2%}| Rank-20: {cmc_2[19]:.2%}| mAP: {mAP_2:.2%}| mINP: {mINP_2:.2%}")
             logging.info("-----------------------Next Trial--------------------")
