@@ -22,7 +22,7 @@ mkdir dataset
 Download the person datasets LLCM, RegDB, and the SYSU-MM01, and use code/data_process/pre_process to process, respectively.
 
 ## Update Time
--- 2024-8-5 We release the test models to github.
+-- 2024-12-10 We release the test models to github.
 
 ## Result
 
