@@ -1,0 +1,13 @@
+# valid config
+eval_iter: 10
+
+# reranking
+reranking_type: GCR
+gnn_k1: 19
+gnn_k2: 5
+
+# pre train
+resume_path: test/checkpoints/stage2/best_epoch_69.pth
+
+# path
+logs_dir: /logs/test/
