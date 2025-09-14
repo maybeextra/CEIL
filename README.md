@@ -84,7 +84,7 @@ Now, your environment is set up and ready for training and testing.
 
     - [SYSU-MM01](http://www.sysu-hcp.net/sysumm01/)
     - [RegDB](https://github.com/shizenglin/Link-Partial-ReID)
-    - [LLCM](https://github.com/VITA-Group/LLCM) <!-- TODO: 如果LLCM有官方链接，请替换 -->
+    - [LLCM](https://github.com/ZYK100/LLCM)
 
 3.  **Pre-processing**
     Use the provided scripts in the `code/data_process/pre_process` directory to process each dataset. For example:
