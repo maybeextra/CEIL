@@ -1,0 +1,14 @@
+stage: 1
+
+#train configs
+num_iter: 175
+max_epoch: 50
+use_id_loss: False
+
+#pre train
+resume: False
+resume_path: test/checkpoints/stage1/train_0_epoch_5.pth
+
+#path
+logs_dir: /logs/stage1/
+model_dir: /checkpoints/stage1/

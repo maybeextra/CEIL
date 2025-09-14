@@ -1,0 +1,15 @@
+# reranking
+reranking_type: GCR
+gnn_k1: 28
+gnn_k2: 7
+
+
+# val/checkpoints/stage2/best_epoch_78.pth
+# val/checkpoints/stage1/train_2_epoch_40.pth
+# BASE/checkpoints/stage1/train_1_epoch_30.pth
+# val/checkpoints/stage1/best_epoch_48.pth
+# pre train
+resume_path: val/checkpoints/stage2/best_epoch_78.pth
+
+# path
+logs_dir: /logs/visualize/

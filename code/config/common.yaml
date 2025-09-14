@@ -1,0 +1,48 @@
+#base configs
+extract_batch_size: 128
+extract_num_workers: 6
+test_batch_size: 128
+test_num_workers: 6
+train_num_workers: 6
+
+#model configs
+backbone: clip
+stride_size: [16,16]
+arch: RN50
+step_size: 20
+sampler: sampler_by_identity
+data_enhancement: fusion
+
+# memory configs
+temp: 0.05
+img_h: 288
+img_w: 144
+
+#DBCSAN configs
+eps: 0.6
+min_samples: 4
+
+#training configs
+gpu: 0
+seed: 1
+save_epoch: 5
+eval_step: 3
+update_iter: 40
+use_weight: True
+loss_type: cam_associate
+smooth_weight: 0.5
+
+#lr
+steps: [30,50]
+gamma: 0.1
+warmup_factor: 0.01
+warmup_iters: 10
+warmup_method: 'linear'
+
+#optimizer
+base_lr: 0.00035
+weight_decay: 0.0005
+weight_decay_bias: 0.0005
+bias_lr_factor: 2
+
+log_name: b
