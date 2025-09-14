@@ -4,7 +4,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.1.1-orange.svg)](https://pytorch.org/)
 [![CUDA](https://img.shields.io/badge/CUDA-11.8-green.svg)](https://developer.nvidia.com/cuda-toolkit)
 [![License](https://img.shields.io/badge/License-MIT-red.svg)](LICENSE)
-[![Paper](https://img.shields.io/badge/Paper-arXiv-purple.svg)](10.1109/TCSVT.2025.3548939) 
+[![Paper](https://img.shields.io/badge/Paper-IEEE-purple.svg)](https://ieeexplore.ieee.org/document/10915644)
 
 **Official implementation of "Camera-Proxy Enhanced Identity-Recalibration Learning"**
 
@@ -39,7 +39,7 @@ We highly recommend using a Conda environment to manage dependencies.
 
 1.  **Clone the repository**
     ```shell
-    git clone https://github.com/your-username/CEIL.git  <!-- TODO: 替换为你的仓库地址 -->
+    git clone https://github.com/maybeextra/CEIL.git
     cd CEIL
     ```
 
