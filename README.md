@@ -23,7 +23,7 @@ Download the person datasets LLCM, RegDB, and the SYSU-MM01, and use code/data_p
 
 ## Update Time
 -- 2024-12-10 We release the test models to github.
-
+-- 2025-9-14 We release the train code to github.
 ## Result
 
 ### RegDB
